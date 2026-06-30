@@ -67,12 +67,12 @@
 
 <p>Para demonstrar a <strong>manutenção do invariante</strong>, assume-se que, no início de uma iteração qualquer do laço, o invariante é verdadeiro.</p>
 
-<p>Ou seja, suponha que após \(i\) iterações já executadas, as variáveis satisfazem:</p>
+<p>Ou seja, suponha que após <strong>i</strong> iterações já executadas, as variáveis satisfazem:</p>
 
-<p>\[s = i^2\]</p>
-
-<p>\[impar = 2i + 1\]</p>
-
+<div style="display: flex; justify-content: center; gap: 40px; margin: 0 auto;">
+    <code>s = i^2</code>
+    <code>impar = 2i + 1</code>
+</div>
 <ul>
 <li><strong>Essa é a hipótese de indução</strong>: assume-se que o estado atual do programa está correto antes da execução da próxima iteração.</li>
 </ul>
