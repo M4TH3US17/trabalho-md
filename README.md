@@ -2,6 +2,17 @@
 
 <p><strong>RELATÓRIO TÉCNICO DE VERIFICAÇÃO FORMAL DE ALGORITMOS</strong></p>
 
+<h2>Participantes</h2>
+
+<table>
+<tr><th>Nome completo</th><th>Cód. matrícula</th></tr>
+<tr><td>Rodrigo aquino barbosa II</td><td>22550962</td></tr>
+<tr><td>José Lucas Costa Sena</td><td>22553780</td></tr>
+<tr><td>Vladimir Shuberth Gomes Calazanz</td><td>22550971</td></tr>
+<tr><td>Jasmin Dalbergia EBOT</td><td>22550136</td></tr>
+<tr><td>Matheus Washington Dalvino Marques</td><td>22553663</td></tr>
+</table>
+
 <h2>1. Objetivo</h2>
 
 <p>Este trabalho tem como objetivo verificar, por meio de asserções em Python, um algoritmo que calcula a soma dos n primeiros números ímpares positivos. A análise segue estritamente as etapas exigidas no roteiro da atividade: pré-condição, inicialização do invariante, manutenção do invariante, função variante, pós- condição, execução do data set e análise detalhada da falha.</p>
