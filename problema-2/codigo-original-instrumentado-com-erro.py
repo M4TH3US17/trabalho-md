@@ -8,8 +8,9 @@ def soma_pares_errada(n):
     assert s == i * (i + 1) and 0 <= i <= n
     while i < n:
         velha_variante = n - i
+        assert velha_variante >= 0
         i = i + 1
-        s = s + (2 * i) 
+        s = s + (2 * i + 2)
         assert s == i * (i + 1) and 0 <= i <= n
         assert (n - i) < velha_variante
     assert s == n * (n + 1)
