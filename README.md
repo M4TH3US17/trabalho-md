@@ -13,6 +13,10 @@
 <tr><td>Matheus Washington Dalvino Marques</td><td>22553663</td></tr>
 </table>
 
+<h2>Demonstração online da execução do Código</h2>
+
+<p>Para testar os códigos Python diretamente no navegador, acesse: <a href="https://trabalho-md-frontend.vercel.app/">https://trabalho-md-frontend.vercel.app/</a></p>
+
 <h2>1. Objetivo</h2>
 
 <p>Este trabalho tem como objetivo verificar, por meio de asserções em Python, um algoritmo que calcula a soma dos n primeiros números ímpares positivos. A análise segue estritamente as etapas exigidas no roteiro da atividade: pré-condição, inicialização do invariante, manutenção do invariante, função variante, pós- condição, execução do data set e análise detalhada da falha.</p>
