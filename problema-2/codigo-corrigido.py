@@ -6,6 +6,7 @@ def soma_pares_corrigida(n):
     s = 0
     i = 0
     assert s == i * (i + 1) and 0 <= i <= n
+
     while i < n:
         velha_variante = n - i
         assert velha_variante >= 0
@@ -13,5 +14,5 @@ def soma_pares_corrigida(n):
         i = i + 1
         assert s == i * (i + 1) and 0 <= i <= n
         assert (n - i) < velha_variante
-    assert s == n * (n + 1)
+    assert s == n * (n + 1), "Erro: Pós-condição violada!"
     return s
