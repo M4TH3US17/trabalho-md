@@ -63,7 +63,21 @@
 
 <p>Como s = 0 e i = 0, a substituição resulta na igualdade 0 = 0², provando que o caso base é perfeitamente válido.</p>
 
-<h3>5. Manutenção do Invariante — Passo Indutivo</h3>
+<h3>5. Hipótese de Indução</h3>
+
+<p>Para demonstrar a <strong>manutenção do invariante</strong>, assume-se que, no início de uma iteração qualquer do laço, o invariante é verdadeiro.</p>
+
+<p>Ou seja, suponha que após \(i\) iterações já executadas, as variáveis satisfazem:</p>
+
+<p>\[s = i^2\]</p>
+
+<p>\[impar = 2i + 1\]</p>
+
+<ul>
+<li><strong>Essa é a hipótese de indução</strong>: assume-se que o estado atual do programa está correto antes da execução da próxima iteração.</li>
+</ul>
+
+<h3>6. Manutenção do Invariante — Passo Indutivo</h3>
 
 <p>Durante a execução do laço, o invariante precisa continuar verdadeiro após o término de cada iteração completa. A verificação ocorre no final do corpo do while :</p>
 
@@ -71,7 +85,7 @@
 
 <p>Isso significa que, após cada atualização das variáveis de controle, a variável s deve representar com precisão matemática a soma dos i primeiros números ímpares.</p>
 
-<h3>6. Função Variante</h3>
+<h3>7. Função Variante</h3>
 
 <p>A função variante utilizada para demonstrar a terminação do laço foi:</p>
 
@@ -87,7 +101,7 @@
 
 <p>Dessa forma, garante-se matematicamente que o laço avança finitamente em direção ao critério de parada.</p>
 
-<h3>7. Código Original Instrumentado com Erro</h3>
+<h3>8. Código Original Instrumentado com Erro</h3>
 
 <p>Abaixo apresenta-se o código que contém uma falha estrutural na ordem de atualização de suas variáveis, comprometendo a consistência do invariante:</p>
 
@@ -124,7 +138,7 @@
     return s
 </code></pre>
 
-<h3>8. Análise da Falha</h3>
+<h3>9. Análise da Falha</h3>
 
 <p>O erro crítico ocorre porque o código incrementa a variável de controle i antes de atualizar a soma acumulada s. Considerando uma execução exemplar com n = 3, os estados evoluem da seguinte forma:</p>
 
@@ -138,7 +152,7 @@
 
 <p>Esta afirmação lógica é falsa. Consequentemente, a execução é interrompida abruptamente lançando a exceção: AssertionError: Error: Invariante quebrado após incrementar i! . A falha expõe que a consistência indutiva foi violada no meio do passo de transição.</p>
 
-<h3>9. Código Corrigido</h3>
+<h3>10. Código Corrigido</h3>
 
 <p>Para sanar o problema, a ordem de atualização deve respeitar a lógica de preservação do estado. Primeiro calcula-se o acréscimo na soma baseado no índice atual e, em seguida, avança-se o índice:</p>
 
@@ -171,7 +185,7 @@
     return s
 </code></pre>
 
-<h3>10. Teste do Data Set — Código Errado</h3>
+<h3>11. Teste do Data Set — Código Errado</h3>
 
 <p>Executando a função com falha sum_of_odds_broken(n) para a faixa de valores de teste, os resultados obtidos são os seguintes:</p>
 
@@ -187,7 +201,7 @@
 
 <p><strong>Nota Informativa:</strong> Observa-se que unicamente o caso limite n = 0 não manifesta a falha visível, visto que a guarda do laço impede a execução do bloco interno defectível, ocultando a incorreção da lógica interna estrutural.</p>
 
-<h3>11. Teste do Data Set — Código Correto</h3>
+<h3>12. Teste do Data Set — Código Correto</h3>
 
 <p>A execução da função corrigida sum_of_odds_correct(n) sobre o conjunto completo de valores produzi resultados em total conformidade com o modelo matemático especificado:</p>
 
