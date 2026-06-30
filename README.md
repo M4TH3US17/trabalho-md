@@ -1,9 +1,4 @@
-<h1>Problema 1 – Soma dos Primeiros Ímpares</h1>
-
-<p><strong>RELATÓRIO TÉCNICO DE VERIFICAÇÃO FORMAL DE ALGORITMOS</strong></p>
-
-<h2>Participantes</h2>
-
+<h1>Participantes</h1>
 <table>
 <tr><th>Nome completo</th><th>Cód. matrícula</th></tr>
 <tr><td>Rodrigo aquino barbosa II</td><td>22550962</td></tr>
@@ -13,15 +8,22 @@
 <tr><td>Matheus Washington Dalvino Marques</td><td>22553663</td></tr>
 </table>
 
-<h2>Demonstração online da execução do Código</h2>
+<h1>Teste o Código</h1>
+<p>
+    Para testar os códigos Python diretamente no navegador, acesse: <a href="https://trabalho-md-frontend.vercel.app/">https://trabalho-md-frontend.vercel.app/</a></p>
 
-<p>Para testar os códigos Python diretamente no navegador, acesse: <a href="https://trabalho-md-frontend.vercel.app/">https://trabalho-md-frontend.vercel.app/</a></p>
+<h1>Documentações</h1>
+<details>
+  <summary>Clique aqui para expandir documentação do <strong>Problema 1</strong></summary>
+<h2>Problema 1 – Soma dos Primeiros Ímpares</h2>
 
-<h2>1. Objetivo</h2>
+<p><strong>RELATÓRIO TÉCNICO DE VERIFICAÇÃO FORMAL DE ALGORITMOS</strong></p>
+
+<h3>1. Objetivo</h3>
 
 <p>Este trabalho tem como objetivo verificar, por meio de asserções em Python, um algoritmo que calcula a soma dos n primeiros números ímpares positivos. A análise segue estritamente as etapas exigidas no roteiro da atividade: pré-condição, inicialização do invariante, manutenção do invariante, função variante, pós- condição, execução do data set e análise detalhada da falha.</p>
 
-<h2>2. Especificação do Problema</h2>
+<h3>2. Especificação do Problema</h3>
 
 <p>O programa deve calcular a soma dos primeiros n números ímpares positivos. A propriedade matemática fundamental utilizada é dada por:</p>
 
@@ -39,7 +41,7 @@
 
 <p>[n = 10 → s = 100]</p>
 
-<h2>3. Pré-condição</h2>
+<h3>3. Pré-condição</h3>
 
 <p>A pré-condição garante que a entrada seja válida antes do início da execução da função. Neste problema específico, a variável n deve ser um número inteiro maior ou igual a zero:</p>
 
@@ -61,7 +63,7 @@
 
 <p>Como s = 0 e i = 0, a substituição resulta na igualdade 0 = 0², provando que o caso base é perfeitamente válido.</p>
 
-<h2>5. Manutenção do Invariante — Passo Indutivo</h2>
+<h3>5. Manutenção do Invariante — Passo Indutivo</h3>
 
 <p>Durante a execução do laço, o invariante precisa continuar verdadeiro após o término de cada iteração completa. A verificação ocorre no final do corpo do while :</p>
 
@@ -69,7 +71,7 @@
 
 <p>Isso significa que, após cada atualização das variáveis de controle, a variável s deve representar com precisão matemática a soma dos i primeiros números ímpares.</p>
 
-<h2>6. Função Variante</h2>
+<h3>6. Função Variante</h3>
 
 <p>A função variante utilizada para demonstrar a terminação do laço foi:</p>
 
@@ -85,7 +87,7 @@
 
 <p>Dessa forma, garante-se matematicamente que o laço avança finitamente em direção ao critério de parada.</p>
 
-<h2>7. Código Original Instrumentado com Erro</h2>
+<h3>7. Código Original Instrumentado com Erro</h3>
 
 <p>Abaixo apresenta-se o código que contém uma falha estrutural na ordem de atualização de suas variáveis, comprometendo a consistência do invariante:</p>
 
@@ -122,7 +124,7 @@
     return s
 </code></pre>
 
-<h2>8. Análise da Falha</h2>
+<h3>8. Análise da Falha</h3>
 
 <p>O erro crítico ocorre porque o código incrementa a variável de controle i antes de atualizar a soma acumulada s. Considerando uma execução exemplar com n = 3, os estados evoluem da seguinte forma:</p>
 
@@ -136,7 +138,7 @@
 
 <p>Esta afirmação lógica é falsa. Consequentemente, a execução é interrompida abruptamente lançando a exceção: AssertionError: Error: Invariante quebrado após incrementar i! . A falha expõe que a consistência indutiva foi violada no meio do passo de transição.</p>
 
-<h2>9. Código Corrigido</h2>
+<h3>9. Código Corrigido</h3>
 
 <p>Para sanar o problema, a ordem de atualização deve respeitar a lógica de preservação do estado. Primeiro calcula-se o acréscimo na soma baseado no índice atual e, em seguida, avança-se o índice:</p>
 
@@ -169,7 +171,7 @@
     return s
 </code></pre>
 
-<h2>10. Teste do Data Set — Código Errado</h2>
+<h3>10. Teste do Data Set — Código Errado</h3>
 
 <p>Executando a função com falha sum_of_odds_broken(n) para a faixa de valores de teste, os resultados obtidos são os seguintes:</p>
 
@@ -185,22 +187,27 @@
 
 <p><strong>Nota Informativa:</strong> Observa-se que unicamente o caso limite n = 0 não manifesta a falha visível, visto que a guarda do laço impede a execução do bloco interno defectível, ocultando a incorreção da lógica interna estrutural.</p>
 
-<h2>11. Teste do Data Set — Código Correto</h2>
+<h3>11. Teste do Data Set — Código Correto</h3>
 
 <p>A execução da função corrigida sum_of_odds_correct(n) sobre o conjunto completo de valores produzi resultados em total conformidade com o modelo matemático especificado:</p>
 
-<h2>12. Explicação Textual da Falha</h2>
+<h3>12. Explicação Textual da Falha</h3>
 
 <p>O AssertionError ocorre sistematicamente na mesma asserção intermediária do código original. O problema reside no desalinhamento do estado das variáveis: o incremento precoce do contador i desfaz a relação quadrática com o acumulador s antes que este possa ser devidamente compensado pelo termo correspondente do somatório.</p>
 
 <p>A inversão aplicada no código corrigido restabelece a ordem lógica correta. Ao realizar o cálculo do termo ímpar como sendo 2i + 1 (utilizando o valor corrente de i) e adicioná-lo à soma antes de efetuar i = i + 1 , garante-se que a igualdade fundamental s = i² permaneça inalterada toda vez que o fluxo de execução atingir as barreiras de checagem do laço.</p>
 
-<h2>13. Pós-condição</h2>
+<h3>13. Pós-condição</h3>
 
 <p>A pós-condição é validada na saída da função:</p>
 
 <p>assert s == n*n, "Error: Pós-condição falhou!"</p>
 
-<h2>14. Conclusão</h2>
+<h3>14. Conclusão</h3>
 
 <p>Este trabalho demonstrou de maneira prática a relevância e os mecanismos de condução de uma verificação estrutural e formal de software. Evidencia-se que a simples ausência de erros visíveis para entradas específicas (como o caso de n = 0) não é garantia suficiente de correção algorítmica. É indispensável o uso do método indutivo de asserções para blindar o software contra falhas lógicas e garantir consistência em todo o seu domínio de operação, respeitando rigorosamente a pré-condição, inicialização, manutenção, função variante e pós-condição.</p>
+</details>
+
+<details>
+  <summary>Clique aqui para expandir documentação do <strong>Problema 2</strong></summary>
+</details>
