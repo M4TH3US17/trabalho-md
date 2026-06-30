@@ -210,6 +210,30 @@
 
 <p>A execução da função corrigida sum_of_odds_correct(n) sobre o conjunto completo de valores produzi resultados em total conformidade com o modelo matemático especificado:</p>
 
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>Resultado Obtido (s)</th>
+      <th>Resultado Esperado (n²)</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>0</td><td>0</td><td>0</td><td>✓</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>✓</td></tr>
+    <tr><td>2</td><td>4</td><td>4</td><td>✓</td></tr>
+    <tr><td>3</td><td>9</td><td>9</td><td>✓</td></tr>
+    <tr><td>4</td><td>16</td><td>16</td><td>✓</td></tr>
+    <tr><td>5</td><td>25</td><td>25</td><td>✓</td></tr>
+    <tr><td>6</td><td>36</td><td>36</td><td>✓</td></tr>
+    <tr><td>7</td><td>49</td><td>49</td><td>✓</td></tr>
+    <tr><td>8</td><td>64</td><td>64</td><td>✓</td></tr>
+    <tr><td>9</td><td>81</td><td>81</td><td>✓</td></tr>
+    <tr><td>10</td><td>100</td><td>100</td><td>✓</td></tr>
+  </tbody>
+</table>
+
 <h3>12. Explicação Textual da Falha</h3>
 
 <p>O AssertionError ocorre sistematicamente na mesma asserção intermediária do código original. O problema reside no desalinhamento do estado das variáveis: o incremento precoce do contador i desfaz a relação quadrática com o acumulador s antes que este possa ser devidamente compensado pelo termo correspondente do somatório.</p>
