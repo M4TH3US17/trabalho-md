@@ -196,6 +196,11 @@
 <tr><td>2</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
 <tr><td>3</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
 <tr><td>4</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
+<tr><td>5</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
+<tr><td>6</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
+<tr><td>7</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
+<tr><td>8</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
+<tr><td>9</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
 <tr><td>10</td><td>AssertionError</td><td>Mesmo comportamento de interrupção por falha de asserção.</td></tr>
 </table>
 
