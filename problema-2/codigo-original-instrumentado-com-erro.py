@@ -15,3 +15,11 @@ def soma_pares_errada(n):
         assert (n - i) < velha_variante
     assert s == n * (n + 1)
     return s
+
+
+if __name__ == "__main__":
+    for n in [0, 1, 4, 10]:
+        try:
+            print(f"n={n} => {soma_pares_errada(n)}")
+        except AssertionError as e:
+            print(f"n={n} => ERRO: {e}")

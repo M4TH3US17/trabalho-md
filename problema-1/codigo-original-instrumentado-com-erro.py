@@ -1,7 +1,6 @@
 # @author: Jasmin Dalbergia EBOT
 # @date: 2026-06-27
 
-
 def sum_of_odds_broken(n: int) -> int:
     """
         Calcula a soma dos n primeiros números ímpares positivos.
@@ -9,10 +8,6 @@ def sum_of_odds_broken(n: int) -> int:
         Versão instrumentada com asserções de verificação formal. Contém um erro
         intencional: o contador i é incrementado antes da atualização da soma s,
         o que viola o invariante do laço para n > 0.
-
-        @param n: Quantidade de termos ímpares a somar (inteiro não negativo).
-        @returns: Soma dos n primeiros ímpares positivos (n^2), se todas as asserções forem satisfeitas.
-        @raises AssertionError: Se a pré-condição, o invariante, a função variante ou a pós-condição forem violados durante a execução.
     """
     assert n >= 0, "Erro: Pré-condição violada!"
     s = 0
@@ -28,3 +23,12 @@ def sum_of_odds_broken(n: int) -> int:
         assert (n - i) < velha_variante, "Erro: Loop sem progresso!"
     assert s == n*n, "Erro: Pós-condição falhou!"
     return s
+
+
+if __name__ == "__main__":
+    for n in [0, 1, 3, 5]:
+        try:
+            print(f"n={n} => {sum_of_odds_broken(n)}")
+        except AssertionError as e:
+            print(f"n={n} => ERRO: {e}")
+

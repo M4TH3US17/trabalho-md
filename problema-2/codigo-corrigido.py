@@ -16,3 +16,8 @@ def soma_pares_corrigida(n):
         assert (n - i) < velha_variante
     assert s == n * (n + 1), "Erro: Pós-condição violada!"
     return s
+
+
+if __name__ == "__main__":
+    for n in [0, 1, 4, 10]:
+        print(f"n={n} => {soma_pares_corrigida(n)}")

@@ -1,6 +1,7 @@
 # @author: Jasmin Dalbergia EBOT
 # @date: 2026-06-27
 
+
 def sum_of_odds_correct(n: int) -> int:
     """
         Calcula a soma dos n primeiros números ímpares positivos.
@@ -8,10 +9,6 @@ def sum_of_odds_correct(n: int) -> int:
         Versão corrigida e instrumentada com asserções de verificação formal.
         A soma é atualizada antes do incremento de i, preservando o invariante
         s = i² em todas as iterações do laço.
-
-        @param n: Quantidade de termos ímpares a somar (inteiro não negativo).
-        @returns: Soma dos n primeiros ímpares positivos (n^2), se todas as asserções forem satisfeitas.
-        @raises AssertionError: Se a pré-condição, o invariante, a função variante ou a pós-condição forem violados durante a execução.
     """
     assert n >= 0, "Erro: Pré-condição violada!"
     s = 0
@@ -26,3 +23,8 @@ def sum_of_odds_correct(n: int) -> int:
         assert (n - i) < velha_variante, "Erro: Loop sem progresso!"
     assert s == n*n, "Erro: Pós-condição falhou!"
     return s
+
+
+if __name__ == "__main__":
+    for n in [0, 1, 3, 5]:
+        print(f"n={n} => {sum_of_odds_correct(n)}")
